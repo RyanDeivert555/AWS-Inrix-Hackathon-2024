@@ -1,0 +1,10 @@
+#nav_element {
+    display: inline-block;
+    margin: 20px;
+    font-size: 25px;
+}
+
+#nav_bar {
+    background-color: #449dd1;
+}
+
