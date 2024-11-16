@@ -1,14 +1,16 @@
-div{
+div {
     color:#0E0E52;
 
 }
-#name{
-    left:0;
+
+#name {
+    left: 0;
     line-height: 0px;
     margin-top: -50px;
-    position:absolute;
-    text-align:center;
-    top:50%;
-    width:100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
     font-size: 500%;
 }
+
