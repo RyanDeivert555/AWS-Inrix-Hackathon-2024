@@ -1,11 +1,11 @@
-.about_buttons {
+.about-buttons {
     box-shadow:0 4px 16px 0 rgba(35,54,61,0.3);
     font-family: Tahoma;
     padding: 8px;
     background-color: #D1E7EE;
     border: none;
     width: 50%;
-    max-width: 500px;
+    max-width: 300px;
     font-size: 20px;
     cursor: pointer;
     -webkit-border-radius: 25;  
@@ -22,4 +22,9 @@
     background-image: linear-gradient(to bottom, #052e4a, #0a73b4);
     text-decoration: none;
     color: white;
+  }
+
+  #data-link {
+    color: #3943b7;
+    text-decoration-line: underline;
   }
