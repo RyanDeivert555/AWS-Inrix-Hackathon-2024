@@ -8,3 +8,9 @@
     background-color: #449dd1;
 }
 
+#box {
+    margin: 50px;
+    height: 500px;
+    background-color: black;
+}
+
