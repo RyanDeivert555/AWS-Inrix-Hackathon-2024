@@ -1,27 +1,27 @@
-import { parse } from 'csv-parse';
 import content from './STREETS_FINAL_DATA.csv?raw';
 
 type StreetData = {
     name: string;
-    accidents: number;
-    speed_difference: number;
-    score: number;
+    accidents: string;
+    speed_difference: string;
+    score: string;
     tier: string;
 };
 
 const street_data_to_string = (s) => {
-    return `StreetData: ${s.name}, Accidents: ${s.accidents}, Speed Difference: ${s.speed_difference}, Score: ${s.score}, Tier: ${s.tier}`;
+    return `Street: ${s.name} | Accidents: ${s.accidents} | Speed Difference: ${s.speed_difference} | Score: ${s.score} | Tier: ${s.tier}`;
 };
 
 const parse = (csv) => {
     const [header, ...rows] = csv.split('\n').map((line) => line.split(','));
+
     const objs = rows.map((row) => Object.fromEntries(row.map((value, index) => [header[index], value])));
     const streets = objs.map((obj) => ({
         name: obj["Street"],
-        accidents: parseInt(obj["PeopleInAccidents"]),
-        speed_difference: parseInt(obj["SpeedDifferenceFromLimit"]),
-        score: parseInt(obj["Score_Scaled"]),
-        tier: obj["Tier"],
+        accidents: obj["PeopleInAccidents"],
+        speed_difference: obj["SpeedDiffFromLimit"],
+        score: obj["Score_Scaled"],
+        tier: obj["Tier\r"],
     }) as StreetData);
 
     return streets;
@@ -35,14 +35,14 @@ const submitEntry = () => {
         return "Input Failed!";
     }
 
-    const text = entry?.value;
+    const text = entry?.value.trim();
 
     let target_street = data.find((street) => street.name === text);
 
     if (target_street === undefined) {
         return "Street not found";
     } else {
-        return "The tier is " + target_street.tier;
+        return `The tier is ${target_street.tier}, and has had ${target_street.accidents} accidents.`;
     }
 }
 
