@@ -1,6 +1,7 @@
 #nav_element {
     display: inline-block;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 25px;
     color:#3943b7;
 }
@@ -14,12 +15,13 @@ a:visited {
 }
 
 #nav_bar {
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
     background-color: #449dd1;
 }
 
-#box {
-    margin: 50px;
-    height: 500px;
-    background-color: black;
+.background {
+    background-color: #78C0E0;
+    font-family: Tahoma;
 }
-
