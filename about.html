@@ -11,7 +11,7 @@
     <body class="background">
         <div id="nav_bar">
             <div id="nav_element">
-                <a href = "index.html">
+                <a href="index.html">
                     Home
                 </a>
             </div>
@@ -27,19 +27,42 @@
             </div>
         </div>
 
-        <div>
+        <div class="body-text">
             <h1>About</h1>
             <div>
                 <p>The purpose of Street Smart is to help users find safe streets to travel on. Using data from <span id="data-link">data.sfgov.org</span>, Street Smart shows users the streets with the lowest rates of vehicular accidents and speed limit infractions.</p>
             </div>
+            <br>
+            </br>
         </div>
-        <div>
+        <div class="body-text">
             <h1>View the street safety information:</h1>
                 <div>
                     <button type="button" class="about-buttons">Search for Streets</button>
                 </div>
+            <br>
+
+            </br>
         </div>
-        <footer>
+        <div>
+            <h1>Data Analysis</h1>
+            <div>
+                <p>We performed multiple steps to collect, clean, process, and interpret traffic data.</p>
+                <ol>
+                    <li>Downloaded accident and speed data from data.sfgov.org</li>
+                    <li>Imported into Google Sheets to delete unnecessary features</li>
+                    <li>Speed: calculated percent difference between average speed and speed limit using Sheets</li>
+                    <li>Speed: calculated average percent difference for all street segments using R</li>
+                    <li>Accidents: found total accidents for each intersection</li>
+                    <li>Accidents: calculated total accidents for each street using a pivot table in Sheets</li>
+                    <li>Accidents: </li>
+                    <li></li>
+                </ol>
+                <br>
+                </br>
+            </div>
+        </div>
+        <footer class="body-text">
             <h3>Team</h3>
             <p>This website was created by Asha LaManque, Ayush Gupta, Evan Hackstadt, Lori Ching, Ryan Deivert, and Timothy Le.</p>
         </footer>
