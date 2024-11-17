@@ -1,11 +1,16 @@
 #scroll_box {
     margin: 50px;
     height: 500px;
-    background-color: grey;
+    background-color: white;
     overflow: scroll;
 }
 
 #search_bar {
+    margin: 10px;
+    display: inline-block; 
+}
+
+#output_bar {
 
 }
 
