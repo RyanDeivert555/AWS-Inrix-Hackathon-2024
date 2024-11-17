@@ -6,28 +6,27 @@
         <title> Street Smart</title>
         <link rel = "stylesheet" href = "index.css">
         <link rel = "stylesheet" href = "nav_bar.css">
-        <script>
-            function toAbout(){
-                window.location.href ="about.html"
-            }
-        </script>
-
-        <script>
-            function toHome(){
-                window.location.href = "index.html"
-            }
-        </script>
     </head>
     <body style = "background-color:#78C0E0;">
         <div id = "name">
             STREET SMART
         </div>
-        <div id="nav_bar" onclick = "toHome()">
+        <div id="nav_bar">
             <div id="nav_element">
-                Home
+                <a href = home.html>
+                    Home
+                </a>
             </div>
-            <div id="nav_element" onclick = "toAbout()">
-                About
+            <div id="nav_element">
+                <a href = about.html>
+                    About
+                </a>
+            </div>
+
+            <div id = "nav_element">
+                <a href = "list_view.html" target = _blank>
+                    Data
+                </a>
             </div>
         </div>
     </body>
