@@ -24,6 +24,17 @@ div {
     font-size: 200%;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#roadimg {
+    margin-top: 2%;
+}
+
 .about-buttons {
     box-shadow:0 6px 20px 0 rgba(35,54,61,0.3);
     font-family: Tahoma;
@@ -40,7 +51,7 @@ div {
     color: black;
 
     margin: 0 auto;
-    margin-top: 700px;
+    margin-top: 42%;
     display: block;
     height: 50px;
 }
