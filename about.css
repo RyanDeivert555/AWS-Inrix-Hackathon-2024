@@ -2,7 +2,7 @@
     box-shadow:0 4px 16px 0 rgba(35,54,61,0.3);
     font-family: Tahoma;
     padding: 8px;
-    background-color: #D1E7EE;
+    background-color: #78c0e0;
     border: none;
     width: 50%;
     max-width: 300px;
@@ -15,11 +15,11 @@
 
 .about-buttons:hover {
     background: #052e4a;
-    background-image: -webkit-linear-gradient(top, #052e4a, #0a73b4);
-    background-image: -moz-linear-gradient(top, #052e4a, #0a73b4);
-    background-image: -ms-linear-gradient(top, #052e4a, #0a73b4);
-    background-image: -o-linear-gradient(top, #052e4a, #0a73b4);
-    background-image: linear-gradient(to bottom, #052e4a, #0a73b4);
+    background-image: -webkit-linear-gradient(top, #0E0E52, #3943B7);
+    background-image: -moz-linear-gradient(top, #0E0E52, #3943B7);
+    background-image: -ms-linear-gradient(top, #0E0E52, #3943B7);
+    background-image: -o-linear-gradient(top, #0E0E52, #3943B7);
+    background-image: linear-gradient(to bottom, #0E0E52, #3943B7);
     text-decoration: none;
     color: white;
   }
@@ -27,4 +27,9 @@
   #data-link {
     color: #3943b7;
     text-decoration-line: underline;
+  }
+
+  #data-link:hover {
+    background-color: #3943b7;
+    color: #ffffff;
   }
