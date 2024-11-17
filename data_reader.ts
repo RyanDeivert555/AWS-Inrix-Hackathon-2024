@@ -1,32 +1,7 @@
-import { fs } from 'fs';
 import { parse } from 'csv-parse';
+import content from './STREETS_FINAL_DATA.csv?raw';
 
-const content = fs.readFile("STREETS_FINAL_DATA.csv", "utf8");
-
-console.log(content);
-
-//const parser = parse(
-//    content, {
-//        delimiter: ','
-//    }
-//);
-
-//const records = [];
-//
-//parser.on('readable', function() {
-//    let record;
-//    while ((record = parser.read()) !== null) {
-//        records.push(record);
-//    }
-//});
-//
-//parser.on('error', function(err) {
-//    console.error(err.message);
-//});
-//
-//parser.end();
-
-type Street = {
+type StreetData = {
     name: string;
     accidents: number;
     speed_difference: number;
@@ -34,23 +9,49 @@ type Street = {
     tier: string;
 };
 
-const fillData = () => {
-    return ""; 
+const street_data_to_string = (s) => {
+    return `StreetData: ${s.name}, Accidents: ${s.accidents}, Speed Difference: ${s.speed_difference}, Score: ${s.score}, Tier: ${s.tier}`;
 };
 
-const data = fillData();
+const parse = (csv) => {
+    const [header, ...rows] = csv.split('\n').map((line) => line.split(','));
+    const objs = rows.map((row) => Object.fromEntries(row.map((value, index) => [header[index], value])));
+    const streets = objs.map((obj) => ({
+        name: obj["Street"],
+        accidents: parseInt(obj["PeopleInAccidents"]),
+        speed_difference: parseInt(obj["SpeedDifferenceFromLimit"]),
+        score: parseInt(obj["Score_Scaled"]),
+        tier: obj["Tier"],
+    }) as StreetData);
+
+    return streets;
+};
+
+const data = parse(content);
 
 const submitEntry = () => {
     const entry = document.getElementById("target_street");
     if (!entry) {
-        return;
+        return "Input Failed!";
     }
 
     const text = entry?.value;
+
+    let target_street = data.find((street) => street.name === text);
+
+    if (target_street === undefined) {
+        return "Street not found";
+    } else {
+        return "The tier is " + target_street.tier;
+    }
 }
 
-document.getElementById("input_button")?.addEventListener("click", submitEntry);
+document.getElementById("input_button")?.addEventListener("click", () => {
+    const tier = submitEntry();
+    const output = document.getElementById("output_box")!;
+    output.innerHTML = tier;
+});
 
 const data_bar = document.getElementById("scroll_box")!;
-data_bar.innerHTML = data;
+data_bar.innerHTML = `<pre>${data.map((street) => street_data_to_string(street)).join('\n')}</pre>`;
 
