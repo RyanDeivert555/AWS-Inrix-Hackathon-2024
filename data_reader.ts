@@ -7,8 +7,19 @@ const fillData = () => {
     return result;
 };
 
-console.log("hello world");
+const data = fillData();
+
+const submitEntry = () => {
+    const entry = document.getElementById("target_street");
+    if (!entry) {
+        return;
+    }
+
+    const text = entry.value;
+}
+
+document.getElementById("input_button")?.addEventListener("click", submitEntry);
 
 const data_bar = document.getElementById("scroll_box");
-data_bar.innerHTML = fillData();
+data_bar.innerHTML = data;
 
