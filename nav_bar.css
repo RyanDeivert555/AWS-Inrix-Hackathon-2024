@@ -2,6 +2,15 @@
     display: inline-block;
     margin: 20px;
     font-size: 25px;
+    color:#3943b7;
+}
+
+a:link {
+    color:#3943b7;
+}
+
+a:visited {
+    color:#3943b7;
 }
 
 #nav_bar {
