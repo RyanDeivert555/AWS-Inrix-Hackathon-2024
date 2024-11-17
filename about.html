@@ -50,13 +50,39 @@
                 <p>We performed multiple steps to collect, clean, process, and interpret traffic data.</p>
                 <ol>
                     <li>Downloaded accident and speed data from data.sfgov.org</li>
+                    <ul>
+                        <li>The accident data is a log of all accidents happening at intersections from the past 2 years</li>
+                        <li>The speed data contains the speed limit and average speed along street segments. Average speeds noticeably higher or lower than speed limit indicate reckless driving or congestion, respectively.</li>
+                    </ul>
                     <li>Imported into Google Sheets to delete unnecessary features</li>
-                    <li>Speed: calculated percent difference between average speed and speed limit using Sheets</li>
-                    <li>Speed: calculated average percent difference for all street segments using R</li>
-                    <li>Accidents: found total accidents for each intersection</li>
-                    <li>Accidents: calculated total accidents for each street using a pivot table in Sheets</li>
-                    <li>Accidents: </li>
-                    <li></li>
+                    <li>Cleaned Speed data:
+                    <ul>
+                        <li>Calculated percent difference between average speed and speed limit using Sheets</li>
+                        <li>Calculated average percent difference for all street segments using R</li>
+                    </ul>
+                    <li>Cleaned Accidents data:</li>
+                    <ul>
+                        <li>Found total people involved in accidents for each intersection</li>
+                        <li>Used Sheets pivot tables to find this data for each street</li>
+                    </ul>
+                    <li>Compiled both features for each street</li>
+                    <li>Normalized values:</li>
+                    <ul>
+                        <li>Normalized accident data to 0-100</li>
+                        <li>Normalized speed data to absolute value 0-1</li>
+                    </ul>
+                    <li>Calculated score:</li>
+                    <ul>
+                        <li>Subtracts normalized accidents from 100</li>
+                        <li>If speed data present, scales normalized value by 0.05 and subtracts from 1</li>
+                        <li>Then multiplies main result by this scalar</li>
+                    </ul>
+                    <li>Converted score to tier rating:</li>
+                    <ul>
+                        <li>For even tier distribution given uneven data, only the highest scores are converted to A Tier</li>
+                        <li>The score range conversion grows for lower tiers.</li>
+                    </ul>
+                    <li>With the tier calculated, the data can be displayed to the user on the website!</li>
                 </ol>
                 <br>
                 </br>
