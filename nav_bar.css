@@ -8,12 +8,12 @@
     color:#3943b7;
 }
 
-a:link {
+.nav-labels:link {
     color:#3943b7;
 }
 
-a:visited {
-    color:#3943b7;
+.nav-labels:visited {
+    color: #3943b7;
 }
 
 #nav_bar {
@@ -27,3 +27,4 @@ a:visited {
     background-color: #78C0E0;
     font-family: Tahoma;
 }
+
